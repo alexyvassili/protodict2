@@ -2,18 +2,18 @@ from setuptools import setup
 
 
 setup(
-    name='protodict',
+    name='protodict2',
     description='a small Python library for 2 ways conversion between dicts '
                 'and protocol buffers.',
     version='1.1.0',
     author='Eugene Van den Bulke',
     author_email='eugene.vandenbulke@gmail.com',
-    url='https://github.com/3kwa/protodict',
+    url='https://github.com/alexyvassili/protodict2',
     license='Public Domain',
     keywords=['protobuf', 'dict'],
     install_requires=['protobuf>=2.3.0', 'six'],
     package_dir={'': 'src'},
-    py_modules=['protodict'],
+    py_modules=['protodict2'],
     # setup_requires=['protobuf>=2.3.0', 'nose>=1.0', 'coverage', 'nosexcover'],
     # test_suite = 'nose.collector',
     classifiers=[
