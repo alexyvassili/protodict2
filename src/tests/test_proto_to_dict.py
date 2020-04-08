@@ -7,7 +7,7 @@ import nose.tools
 
 from tests.sample_pb2 import MessageOfTypes, extDouble, extString, \
                              NestedExtension, MessageOneRequired, MessageOneOptional
-from protodict2 import to_dict, to_protobuf
+from protodicts import to_dict, to_protobuf
 
 
 class Test(unittest.TestCase):
