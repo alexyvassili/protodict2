@@ -1,4 +1,4 @@
-# protodict
+# protodicts
 
 Is a fork of protobuf-to-dict (created by [Ben Hodgson](http://benhodgson.com/)),
 stewarded by [Eugene Van den Bulke](http://github.com/3kwa) as Ben does not appear

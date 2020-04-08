@@ -139,6 +139,8 @@ def _dict_to_protobuf(pb, value, type_callable_map, strict):
     fields = _get_field_mapping(pb, value, strict)
 
     for field, input_value, pb_value in fields:
+        if input_value is None:
+            continue
         if field.label == FieldDescriptor.LABEL_REPEATED:
             for item in input_value:
                 if field.type in (FieldDescriptor.TYPE_MESSAGE, FieldDescriptor.TYPE_GROUP):
@@ -146,6 +148,8 @@ def _dict_to_protobuf(pb, value, type_callable_map, strict):
                     _dict_to_protobuf(m, item, type_callable_map, strict)
                 elif field.type == FieldDescriptor.TYPE_ENUM and isinstance(item, six.string_types):
                     pb_value.append(_string_to_enum(field, item))
+                elif field.type == FieldDescriptor.TYPE_BYTES:
+                    pb_value.append(type_callable_map[field.type](item))
                 else:
                     pb_value.append(item)
             continue
@@ -170,6 +174,7 @@ def _dict_to_protobuf(pb, value, type_callable_map, strict):
         setattr(pb, field.name, input_value)
 
     return pb
+
 
 def _string_to_enum(field, input_value):
     enum_dict = field.enum_type.values_by_name
