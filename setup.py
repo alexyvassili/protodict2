@@ -5,7 +5,7 @@ setup(
     name='protodict2',
     description='a small Python library for 2 ways conversion between dicts '
                 'and protocol buffers.',
-    version='1.1.1',
+    version='1.1.2',
     author='Eugene Van den Bulke',
     author_email='eugene.vandenbulke@gmail.com',
     url='https://github.com/alexyvassili/protodict2',
